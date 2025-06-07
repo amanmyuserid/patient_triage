@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+
+# SQLite DB (your current database)
+patient_data.db
+
+# Environments
+.env
+.venv/
+env/
+venv/
+.idea/
+.vscode/
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Byte-compiled cache
+*.egg
+*.egg-info
+.eggs/

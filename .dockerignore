@@ -1,0 +1,16 @@
+# Don't copy virtualenvs, local caches, and system junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+.DS_Store
+.env
+.venv/
+env/
+venv/
+.idea/
+.vscode/
+
+# Don't include test data or local SQLite DB in Docker image
+patient_data.db
