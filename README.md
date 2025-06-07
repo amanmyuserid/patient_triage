@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 3. **Run the app:**
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app
 ```
 
 4. **Access Swagger UI:**
@@ -69,6 +69,7 @@ http://localhost:8000/docs
 > **This can take several minutes depending on your internet speed**.  
 > It will be cached afterward for faster future runs.
 
+
 1. **Build Docker image:**
 ```bash
 docker build -t patient-triage-api .
@@ -79,7 +80,7 @@ docker build -t patient-triage-api .
 docker run -d -p 8000:8000 --name triage-app patient-triage-api
 ```
 
-3. **Open in browser:**
+3. **Access Swagger UI:**
 ```
 http://localhost:8000/docs
 ```
