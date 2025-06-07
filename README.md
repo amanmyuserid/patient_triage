@@ -32,7 +32,12 @@ patient_triage/
 
 ## 🚀 Running the App
 
-### ✅ Option 1: Without Docker (Local Machine)
+### ✅ Option 1: Without Docker
+
+> ⚠️ **IMPORTANT: First Run Will Take Time**  
+> The `facebook/bart-large-mnli` model (~2GB) will be downloaded the first time you run the app.  
+> **This can take several minutes depending on your internet speed**.  
+> It will be cached afterward for faster future runs.
 
 1. **Create a virtual environment (optional but recommended):**
 ```bash
@@ -58,6 +63,11 @@ http://localhost:8000/docs
 ---
 
 ### 🐳 Option 2: With Docker
+
+> ⚠️ **IMPORTANT: First Run Will Take Time**  
+> The `facebook/bart-large-mnli` model (~2GB) will be downloaded the first time you run the app.  
+> **This can take several minutes depending on your internet speed**.  
+> It will be cached afterward for faster future runs.
 
 1. **Build Docker image:**
 ```bash
