@@ -50,10 +50,12 @@ pip install -r requirements.txt
 ```bash
 uvicorn app.main:app
 ```
-> ⚠️ **IMPORTANT: First Run Will Take Time**  
-> The `facebook/bart-large-mnli` model (~2GB) will be downloaded the first time you run the app.  
-> **This can take several minutes depending on your internet speed**.  
-> It will be cached afterward for faster future runs.
+
+> ⚠️ **IMPORTANT: First-Time Model Download Notice**  
+> If you're running the app for the first time on your system, please **wait a few minutes** while the model `facebook/bart-large-mnli` (~2GB) is being downloaded in the background.  
+> During this time, if you hit the API endpoint, it may appear unresponsive — **this is expected**.  
+> Response will work normally **after the model download is complete**.  
+> The model is cached locally after the first run, so future startups will be fast.
 
 
 4. **Access Swagger UI:**
@@ -76,10 +78,12 @@ docker build -t patient-triage-api .
 ```bash
 docker run -d -p 8000:8000 --name triage-app patient-triage-api
 ```
-> ⚠️ **IMPORTANT: First Run Will Take Time**  
-> The `facebook/bart-large-mnli` model (~2GB) will be downloaded the first time you run the app.  
-> **This can take several minutes depending on your internet speed**.  
-> It will be cached afterward for faster future runs.
+
+> ⚠️ **IMPORTANT: First-Time Model Download Notice**  
+> If you're running the app for the first time on your system, please **wait a few minutes** while the model `facebook/bart-large-mnli` (~2GB) is being downloaded in the background.  
+> During this time, if you hit the API endpoint, it may appear unresponsive — **this is expected**.  
+> Response will work normally **after the model download is complete**.  
+> The model is cached locally after the first run, so future startups will be fast.
 
 
 3. **Access Swagger UI:**
