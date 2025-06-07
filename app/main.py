@@ -5,9 +5,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from fastapi.encoders import jsonable_encoder
 import threading
+from fastapi import status
 
 from . import models, schemas, database, classifier
 from .database import SessionLocal, engine
+
+from . import docs  # 👈 import your custom doc module
+from .docs import predict_endpoint_docs 
+
+
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -20,6 +26,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# at the end of your file
+app.openapi = lambda: docs.custom_openapi(app)
+
 # Warm up model on startup
 threading.Thread(target=lambda: classifier.classify_text("I need help now"), daemon=True).start()
 
@@ -31,8 +40,12 @@ def get_db():
         db.close()
 
 
-@app.post("/predict", response_model=schemas.StandardResponse, summary="Predict patient triage category",
-          description="Classifies a patient's message into a triage category and stores the message history.")
+
+@app.post(
+    "/predict",
+    response_model=schemas.StandardResponse,
+    **predict_endpoint_docs  # Inject all metadata here cleanly
+)
 def predict(request: schemas.PatientRequest, db: Session = Depends(get_db)):
     try:
         category, confidence = classifier.classify_text(request.message)
