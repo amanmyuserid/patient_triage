@@ -61,6 +61,7 @@ uvicorn app.main:app
 4. **Access Swagger UI:**
 ```
 http://localhost:8000/docs
+http://localhost:8000/redoc
 ```
 
 ---
@@ -89,6 +90,7 @@ docker run -d -p 8000:8000 --name triage-app patient-triage-api
 3. **Access Swagger UI:**
 ```
 http://localhost:8000/docs
+http://localhost:8000/redoc
 ```
 
 ---

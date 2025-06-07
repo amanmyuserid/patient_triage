@@ -30,7 +30,9 @@ def get_db():
     finally:
         db.close()
 
-@app.post("/predict", response_model=schemas.StandardResponse)
+
+@app.post("/predict", response_model=schemas.StandardResponse, summary="Predict patient triage category",
+          description="Classifies a patient's message into a triage category and stores the message history.")
 def predict(request: schemas.PatientRequest, db: Session = Depends(get_db)):
     try:
         category, confidence = classifier.classify_text(request.message)
