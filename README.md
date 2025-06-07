@@ -1,6 +1,4 @@
-# README.md
-
-## 🏥 Patient Triage API (FastAPI + HuggingFace)
+# 🏥 Patient Triage API (FastAPI + HuggingFace)
 
 A small web service that classifies patient messages into triage categories such as `emergency`, `routine`, `follow-up`, or `other` using a HuggingFace transformer model (`facebook/bart-large-mnli`).
 
